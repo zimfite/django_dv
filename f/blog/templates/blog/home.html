@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+<div class="alert mt-2">
+    <h1 style=" color: rgba(160, 71, 49, 0.849); text-align: center;">Главная</h1>
+</div>
+{% if posts %}
+{% for el in posts %}
+<div class="alert alert-warning mt-2" style="background:  rgba(255, 200, 190, 0.568); border: 2px solid rgba(160, 71, 49, 0.562);">
+    <h3 style="color: rgba(160, 71, 49, 0.856);">{{el.title}}</h3>
+    <p style="color: rgba(160, 71, 49, 0.856);">{{el.post}}</p>
+</div>
+{% endfor %}
+{% else %}
+<p style="color: rgba(160, 71, 49, 0.856);">Нет записей</p>
+{% endif %}
+{% endblock %}
