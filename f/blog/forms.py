@@ -11,7 +11,7 @@ class PostForm(ModelForm):
                 'placeholder': 'Название',
                 'class': 'form-control'
             }),
-            'post': TextInput(attrs={
+            'post': Textarea(attrs={
                 'placeholder': 'Описание',
                 'class': 'form-control'
             })
