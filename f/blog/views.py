@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from.models import Post
+from .models import Post
+from .forms import PostForm
 # Create your views here.
 def home(request):
     posts = Post.objects.all()
@@ -9,3 +10,7 @@ def home(request):
 
 def about(request):
     return render(request, 'blog/about.html')
+
+def create(request):
+    form = PostForm()
+    return render(request, 'blog/create.html', {'form': form})
